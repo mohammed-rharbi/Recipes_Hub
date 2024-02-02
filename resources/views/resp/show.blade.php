@@ -24,17 +24,17 @@
                         </form>
                     </div>
 
-                    <div class="my-6 p-4 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg flex items-center">
+                    <div class="my-6 p-4 bg-gray-700 border-b border-gray-200 shadow-sm sm:rounded-lg flex items-center">
                         <div class="flex-none w-48 h-48 overflow-hidden">
                             <img src="{{ asset($recp->image) }}" alt="Uploaded Image" class="object-cover w-full h-full" style="border-radius: 0 50% 50% 50%;">
                         </div>
                     
                         <!-- Content Container -->
                         <div class="ml-10 flex-grow mb-[120px] ">
-                            <h2 class="font-bold text-3xl text-blue-700 hover:text-blue-800 mt-0 mb-4">
+                            <h2 class="font-bold text-3xl text-blue-400 hover:text-blue-800 mt-0 mb-4">
                                 <a href="{{ route('note.show', $recp->id) }}">{{ $recp->title }}</a>
                             </h2>
-                            <p class="text-gray-700">{{ Str::limit($recp->content, 200) }}</p>
+                            <p class="text-white">{{ Str::limit($recp->content, 500) }}</p>
                         </div>
                     </div>
                     <p class="opacity-70 text-white ">

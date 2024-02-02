@@ -57,7 +57,7 @@ class RecipesController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:10048',
            
         ]);
 
@@ -147,9 +147,8 @@ class RecipesController extends Controller
     public function show_home()
     {
 
-        // $resp = Recipes::all();
-        // $res = Recipes::get();
-        $resp = DB::table('recipes')->latest('updated_at')->get();
+        $resp = Recipes::latest('updated_at')->get();
+        // $resp = DB::table('recipes')->latest('updated_at')->get();
 
         return view('welcome')->with('resp',$resp);
 
